@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <h1 style="text-align:center">La liste des Entreprises</h1>
+      <hr>
+      <table class="table table-striped">
+        <thead>
+          @if (entreprises && entreprises.length > 0) {
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Chiffre d'Affaires</th>
+            <th>Email</th>
+            <th>Date Création</th>
+          </tr>
+          }
+        </thead>
+        @for (ent of entreprises; track ent.idEnt) {
+        <tbody>
+          <tr>
+            <td>{{ ent.idEnt }}</td>
+            <td>{{ ent.nomEnt }}</td>
+            <td>{{ ent.chiffreAff | number }}</td>
+            <td>{{ ent.email }}</td>
+            <td>{{ ent.dateCre | date:'dd/MM/yyyy' }}</td>
+          </tr>
+        </tbody>
+        }
+      </table>
+    </div>
+  </div>
+</div>
